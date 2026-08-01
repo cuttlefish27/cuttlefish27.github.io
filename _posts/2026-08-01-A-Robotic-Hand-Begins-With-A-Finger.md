@@ -10,6 +10,7 @@ Humanoid robotics has always fascinated me, and within that field, few component
 # The Design
 
 <model-viewer
+    id=finger
     src="/assets/models/Finger_AssemblyV3.glb"
     camera-controls
     animation-name="Exploded View">
