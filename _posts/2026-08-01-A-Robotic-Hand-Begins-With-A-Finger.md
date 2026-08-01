@@ -6,9 +6,22 @@ date: 2026-08-01
 
 Humanoid robotics has always fascinated me, and within that field, few components are as deceptively complex as the human hand. When I set out to design my own robotic finger, I wanted to tackle that complexity head on, starting small with a single finger before working toward something bigger. 
 
-My first version relied on potentiometers for control, and it quickly revealed a fundamental limitation. I could dial in servo positions, but I had no direct way to tell the fingertip where to go in space. I was controlling the puppet strings, not the puppet. That frustration led me to Blender, which I now use as an interactive control interface. I can position a target in the simulation and let Blender’s built in numerical inverse kinematics solver work out the joint angles, sparing me from deriving those equations by hand. 
+# The Design
+
+<model-viewer
+    src="/assets/models/Finger_AssemblyV3.glb"
+    camera-controls
+    animation-name="Exploded View">
+</model-viewer>
 
 Mechanically, the finger has three degrees of freedom. Two servos work as an opposing tendon pair to handle adduction and abduction, letting the finger point side to side using tension rather than a rigid pivot. A third servo beneath them controls curling. Right now extension is passive, handled by a spring that pulls the finger back after each curl. That spring came after a fairly painful lesson: my early designs used a rubber band and elastic string, which snapped constantly and never extended with any consistency. Springs solved that outright. 
+
+
+
+
+My first version relied on potentiometers for control, and it quickly revealed a fundamental limitation. I could dial in servo positions, but I had no direct way to tell the fingertip where to go in space. I was controlling the puppet strings, not the puppet. That frustration led me to Blender, which I now use as an interactive control interface. I can position a target in the simulation and let Blender’s built in numerical inverse kinematics solver work out the joint angles, sparing me from deriving those equations by hand. 
+
+
 
 Getting the signal from Blender to the physical hardware required its own pipeline. The joint angles calculated in Blender are sent through a socket server to a separate Python process, which converts those angles into the tendon lengths needed, then into servo rotations, which are sent over serial to an ESP32 that executes the commands. 
 
