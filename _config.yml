@@ -2,6 +2,6 @@ title: Sahil's Blog
 description: A collection of my interests and projects
 theme: minima
 
-header_pages:
- -about.md
- -blog.md
+header_pages: 
+ - about.md
+ - log.md
