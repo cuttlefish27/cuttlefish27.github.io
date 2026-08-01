@@ -4,4 +4,4 @@ theme: minima
 
 header_pages: 
  - about.md
- - log.md
+ - blog.md
