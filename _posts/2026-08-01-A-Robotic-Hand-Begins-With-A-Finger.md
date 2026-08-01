@@ -12,6 +12,8 @@ Humanoid robotics has always fascinated me, and within that field, few component
 <model-viewer
     id="finger"
     src="/assets/models/Finger_AssemblyV3.glb"
+    autoplay
+    animation-name="ExplodeAction"
     camera-controls>
 </model-viewer>
 
