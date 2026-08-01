@@ -3,6 +3,7 @@ layout: post
 title: A Robotic Hand Begins With a Finger
 date: 2026-08-01
 ---
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 Humanoid robotics has always fascinated me, and within that field, few components are as deceptively complex as the human hand. When I set out to design my own robotic finger, I wanted to tackle that complexity head on, starting small with a single finger before working toward something bigger. 
 
