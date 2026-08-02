@@ -5,7 +5,7 @@ date: 2026-08-01
 ---
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-Humanoid robotics has always fascinated me, and within that field, few components are as deceptively complex as the human hand. When I set out to design my own robotic finger, I wanted to tackle that complexity head on, starting small with a single finger before working toward something bigger. 
+Humanoid robotics has always fascinated me, and within that field, few components are as deceptively complex as the human hand. When I set out to design my own robotic finger, I wanted to tackle that complexity head on, starting small with a single finger before working toward something bigger. The designs and code are available at [RoboticHand](https://github.com/cuttlefish27/RoboticHand) and [RoboticHandController](https://github.com/cuttlefish27/robotic_hand_controller).
 
 ## The Current Design
 <model-viewer
@@ -29,7 +29,7 @@ model-viewer {
 }
 </style>
 
-*Below is a slider to show an exploded view*\
+*Below is a slider to show an exploded view*
 
 <input 
     type="range" 
@@ -52,15 +52,22 @@ Mechanically, the finger has three degrees of freedom. Two SG90 servos work as a
 On the CAD side, I’ve gone through dozens of iterations per joint, mostly chasing torque and space efficiency simultaneously. Small shifts in pivot points and tendon attachment points had outsized effects on performance. One deliberate choice I made was keeping the servos inside the hand itself rather than routing them back to the forearm, which is common in a lot of other designs. It’s a harder packaging problem, but it keeps the overall footprint smaller and leaves the forearm free for wrist actuation and the electronics.
 
 ### Finger Design Iterations
-*Version 1*\
-<img src="/assets/images/FingerV1-0.JPG" width= "50%">\
-*Version 1.5*\
-<img src="/assets/images/FingerV1-5.JPG" width= "50%">\
-*Version 2*\
-<img src="/assets/images/FingerV2-0.jpg" width= "50%">\
-*Version 3*\
-<img src="/assets/images/FingerV3-0.JPG" width= "50%">\
+#### Version 1
+<img src="/assets/images/FingerV1-0.JPG" style="display: block; margin: 0 auto; width: 50%;">\
+*The very first real prototype using 3D printed parts and ball bearings. The range of motion of the ball joint at the base was too large for effective control so this had to be redone.*
 
+#### Version 1.5
+<img src="/assets/images/FingerV1-5.JPG" style="display: block; margin: 0 auto; width: 50%;">\
+*Fixed the range of motion problem and created an actuator assembly with a stepper motor at the base. The first joint couldn't get to $$90\degree$$ so the finger had very limited range of motion. The assembly was also too bukly to fit in a hand.*
+#### Version 2
+<div style="display: flex; justify-content: center; gap: 20px;">
+<img src="/assets/images/FingerV2-0.jpg" width="40%">
+<img src="/assets/images/FingerV2Spring.JPG" width="40%">
+</div>
+*Shrunk the profile of the assembly, and made plans to move the stepper motor into the forearm to save space. This was the first version to use springs. Still dealing with ROM limitations and now the assembly became too long because of the stacked servo design.*
+#### Version 3: Current
+<img src="/assets/images/FingerV3-0.JPG" style="display: block; margin: 0 auto; width: 50%;">
+*Fixed the ROM problems by routing the tendons through the base piece. Shrunk the actuator housing by stacking the servos differently, replaced the stepper motor with a third servo that fits within the profile. With this design I was ready to start focusing on the software controls.*
 
 # The Blender Controller
 ## Math
