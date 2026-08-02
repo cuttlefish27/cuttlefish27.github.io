@@ -12,8 +12,8 @@ Humanoid robotics has always fascinated me, and within that field, few component
     id="finger"
     src="/assets/models/Finger_AssemblyV3.glb"
     camera-controls
-    min-camera-orbit="auto auto 1m"
-    max-camera-orbit="auto auto 10m"
+    min-camera-orbit="auto auto 20%"
+    max-camera-orbit="auto auto 300%"
     environment-image="neutral"
     exposure="0.6"
     shadow-intensity="2"
