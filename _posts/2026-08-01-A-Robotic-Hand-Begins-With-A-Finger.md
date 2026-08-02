@@ -53,13 +53,13 @@ On the CAD side, I’ve gone through dozens of iterations per joint, mostly chas
 
 ### Finger Design Iterations
 *Version 1*\
-<img src="../assets/images/FingerV1-0.JPG" width= "50%">\
+<img src="/assets/images/FingerV1-0.JPG" width= "50%">\
 *Version 1.5*\
-<img src="../assets/images/FingerV1-5.JPG" width= "50%">\
+<img src="/assets/images/FingerV1-5.JPG" width= "50%">\
 *Version 2*\
-<img src="../assets/images/FingerV2-0.jpg" width= "50%">\
+<img src="/assets/images/FingerV2-0.jpg" width= "50%">\
 *Version 3*\
-<img src="../assets/images/FingerV3-0.JPG" width= "50%">\
+<img src="/assets/images/FingerV3-0.JPG" width= "50%">\
 
 
 # The Blender Controller
