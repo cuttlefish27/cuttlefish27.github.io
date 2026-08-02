@@ -8,13 +8,13 @@ date: 2026-08-01
 Humanoid robotics has always fascinated me, and within that field, few components are as deceptively complex as the human hand. When I set out to design my own robotic finger, I wanted to tackle that complexity head on, starting small with a single finger before working toward something bigger. 
 
 # The Design
-
 <model-viewer
     id="finger"
     src="/assets/models/Finger_AssemblyV3.glb"
-    autoplay
+    camera-controls
     animation-name="ExplodeAction"
-    camera-controls>
+    autoplay
+    loop>
 </model-viewer>
 
 Mechanically, the finger has three degrees of freedom. Two servos work as an opposing tendon pair to handle adduction and abduction, letting the finger point side to side using tension rather than a rigid pivot. A third servo beneath them controls curling. Right now extension is passive, handled by a spring that pulls the finger back after each curl. That spring came after a fairly painful lesson: my early designs used a rubber band and elastic string, which snapped constantly and never extended with any consistency. Springs solved that outright. 
