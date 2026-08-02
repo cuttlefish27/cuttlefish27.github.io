@@ -12,19 +12,33 @@ Humanoid robotics has always fascinated me, and within that field, few component
     id="finger"
     src="/assets/models/Finger_AssemblyV3.glb"
     camera-controls
-    animation-name="ExplodeAction"
-    autoplay
-    loop
-    style="width: 100%; height: 800px;">
+    environment-image="neutral"
+    exposure="1"
+    animation-name="ExplodeAction">
 </model-viewer>
+
+<style>
+model-viewer {
+    width: 100%;
+    height: 640px;
+    background-color: #111;
+}
+</style>
+
+<input 
+    type="range" 
+    min="0" 
+    max="2.5" 
+    step="0.01" 
+    value="0"
+    oninput="scrubAnimation(this.value)">
+
 <script>
 const model = document.getElementById("finger");
-
-model.addEventListener("load", () => {
-    console.log("Loaded!");
-    console.log("Animations:", model.availableAnimations);
-    console.log("Duration:", model.duration);
-});
+function scrubAnimation(time) {
+    model.pause();
+    model.currentTime = time;
+}
 </script>
 
 Mechanically, the finger has three degrees of freedom. Two servos work as an opposing tendon pair to handle adduction and abduction, letting the finger point side to side using tension rather than a rigid pivot. A third servo beneath them controls curling. Right now extension is passive, handled by a spring that pulls the finger back after each curl. That spring came after a fairly painful lesson: my early designs used a rubber band and elastic string, which snapped constantly and never extended with any consistency. Springs solved that outright. 
