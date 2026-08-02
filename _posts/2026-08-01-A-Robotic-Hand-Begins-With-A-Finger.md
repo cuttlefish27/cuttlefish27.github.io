@@ -14,7 +14,8 @@ Humanoid robotics has always fascinated me, and within that field, few component
     camera-controls
     animation-name="ExplodeAction"
     autoplay
-    loop>
+    loop
+    style="width: 100%; height: 800px;">
 </model-viewer>
 <script>
 const model = document.getElementById("finger");
