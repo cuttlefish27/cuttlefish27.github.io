@@ -69,11 +69,11 @@ My initial versions all relied on potentiometers and switches that directly cont
 Getting the signal from Blender to the physical hardware required its own pipeline. First an armature in blender is used to pose the finger and additionally uses Blender's built in inverse kinematics solver to solve the joint angles needed to point the finger in a certain direction. Then by deriving the transformation matrix for the finger, I was able to create an expression that represented the change in tendon length as a matrix function of the joint angles. 
 
 ### Variable definitions
-Let $$p_1$$ be the point about which the finger rotates in the sagittal plane.
-Let $$p_2$$ be the point about which the finger rotates in the frontal plane.
-Let $n$ be the offset distance between $p_1$ and $p_2$
-Let $q_1$ and $q_2$ be the attachment point for the pointing servos in $p_2$'s coordinate system
-Let $G_1$ and $G_2$ be the stationary guide holes for the tendons
+Let $$p_{1}$$ be the point about which the finger rotates in the sagittal plane.
+Let $$p_{2}$$ be the point about which the finger rotates in the frontal plane.
+Let $n$ be the offset distance between $p_{1}$ and $p_{2}$
+Let $q_{1}$ and $q_{2}$ be the attachment point for the pointing servos in $p_{2}$'s coordinate system
+Let $G_{1}$ and $G_{2}$ be the stationary guide holes for the tendons
 
 ### Equations
 
