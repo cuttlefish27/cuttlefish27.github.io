@@ -16,8 +16,8 @@ Humanoid robotics has always fascinated me, and within that field, few component
     max-camera-orbit="auto auto 300%"
     environment-image="neutral"
     exposure="0.6"
-    shadow-intensity="2"
-    shadow-softness="1"
+    shadow-intensity="4"
+    shadow-softness="0.5"
     animation-name="ExplodeAction">
 </model-viewer>
 
