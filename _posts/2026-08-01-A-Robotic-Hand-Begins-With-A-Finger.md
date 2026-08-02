@@ -71,12 +71,13 @@ Getting the signal from Blender to the physical hardware required its own pipeli
 ### Variable definitions
 Let $$p_{1}$$ be the point about which the finger rotates in the sagittal plane.
 Let $$p_{2}$$ be the point about which the finger rotates in the frontal plane.
-Let $n$ be the offset distance between $p_{1}$ and $p_{2}$
-Let $q_{1}$ and $q_{2}$ be the attachment point for the pointing servos in $p_{2}$'s coordinate system
-Let $G_{1}$ and $G_{2}$ be the stationary guide holes for the tendons
+Let $$n$$ be the offset distance between $$p_{1}$$ and $$p_{2}$$
+Let $$q_{1}$$ and $$q_{2}$$ be the attachment point for the pointing servos in $$p_{2}$$'s coordinate system
+Let $$G_{1}$$ and $$G_{2}$$ be the stationary guide holes for the tendons
 
 ### Equations
 
+<!-- -->
 $$
 T_{p_1\to B}=
 \begin{bmatrix}
@@ -86,8 +87,9 @@ T_{p_1\to B}=
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
-> Transformation from $$p_1$$ to the base
+>Transformation from $$p_1$$ to the base  
 
+<!-- -->
 $$
 T_{p_2\to p_1}=
 \begin{bmatrix}
@@ -97,48 +99,38 @@ T_{p_2\to p_1}=
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
-
 > Transformation from $$p_2$$ to $$p_1$$
-
+<!-- -->
 
 $$
 T(\theta_1,\theta_2) = T_{p_1\to B} T_{p_2\to p_1}
 $$
-
 > Overall transformation
+<!-- -->
 
 $$
-A_1(\theta_1,\theta_2)=T(\theta_1,\theta_2)q_1
-$$
-
-$$
+A_1(\theta_1,\theta_2)=T(\theta_1,\theta_2)q_1\\
 A_2(\theta_1,\theta_2)=T(\theta_1,\theta_2)q_2
 $$
-
 >Tendon attachment points
+<!-- -->
 
 
 Since the distance between the attachment points and the guide holes are the only part of the tendon that is changing, the change in tendon length is equal to the change in distance between those two points.
 
 $$
-L_1(\theta_1, \theta_2) = \|G_1 - A_1(\theta_1, \theta_2)\|
-$$
-
-$$
+L_1(\theta_1, \theta_2) = \|G_1 - A_1(\theta_1, \theta_2)\|\\
 L_2(\theta_1, \theta_2) = \|G_2 - A_2(\theta_1, \theta_2)\|
 $$
-
 > Above gives us the required tendon lengths, from here on referred to as $L_1$ and $L_2$
+<!-- -->
 
 $$
-\Delta L_1 = L_{1_0} - L_1
-$$
-
-$$
+\Delta L_1 = L_{1_0} - L_1\\
 \Delta L_2 = L_{2_0} - L_2
 $$
-
 > Change in tendon lengths from rest, $$L_{1_0}$$ and $$L_{2_0}$$ are the tendon lengths at rest
+<!-- -->
 
 
 ## Software
