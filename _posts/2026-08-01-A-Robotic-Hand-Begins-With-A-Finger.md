@@ -12,8 +12,12 @@ Humanoid robotics has always fascinated me, and within that field, few component
     id="finger"
     src="/assets/models/Finger_AssemblyV3.glb"
     camera-controls
+    min-camera-orbit="auto auto 0.02m"
+    max-camera-orbit="auto auto 2m"
     environment-image="neutral"
-    exposure="1"
+    exposure="0.6"
+    shadow-intensity="2"
+    shadow-softness="1"
     animation-name="ExplodeAction">
 </model-viewer>
 
