@@ -74,7 +74,7 @@ On the CAD side, I’ve gone through dozens of iterations per joint, mostly chas
 My initial versions all relied on potentiometers and switches that directly controlled the actuators and it quickly revealed a fundamental limitation. I could directly change servo positions, but I had no direct way to tell the fingertip where to go in space. That frustration led me to Blender, which I now use as an interactive control interface. I designed a system that takes a Blender pose and copies it on the physical model.
 
 ## Finger Kinematics
-In this section, I define finger pointing as the motion of the proximal phalanx and finger curling as the motion of the intermediate and distal phalanges 
+I define finger pointing as the motion of the proximal phalanx and finger curling as the motion of the intermediate and distal phalanges 
 
 Before I did anything else, I needed to calculate the kinematics of the finger. This can be split into three main questions I needed to answer. \
 \
