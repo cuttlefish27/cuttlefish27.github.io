@@ -70,6 +70,7 @@ On the CAD side, I’ve gone through dozens of iterations per joint, mostly chas
 *Fixed the ROM problems by routing the tendons through the base piece. Shrunk the actuator housing by stacking the servos differently, replaced the stepper motor with a third servo that fits within the profile. With this design I was ready to start focusing on the software controls.*
 
 # The Blender Controller
+<video src="/assets/videos/ControllerVid720p.mp4" preload="auto" controls muted width="100%"></video>
 ## Math
 My initial versions all relied on potentiometers and switches that directly controlled the actuator and it quickly revealed a fundamental limitation. I could directly change servo positions, but I had no direct way to tell the fingertip where to go in space. That frustration led me to Blender, which I now use as an interactive control interface. I designed a system that takes a Blender pose and copies it on the physical model.
 
