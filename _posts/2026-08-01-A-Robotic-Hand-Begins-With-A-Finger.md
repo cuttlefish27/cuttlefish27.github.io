@@ -71,12 +71,11 @@ On the CAD side, I’ve gone through dozens of iterations per joint, mostly chas
 
 # The Blender Controller
 <video src="/assets/videos/ControllerVid720p.mp4" preload="auto" controls muted width="100%"></video>
-## Math
 My initial versions all relied on potentiometers and switches that directly controlled the actuator and it quickly revealed a fundamental limitation. I could directly change servo positions, but I had no direct way to tell the fingertip where to go in space. That frustration led me to Blender, which I now use as an interactive control interface. I designed a system that takes a Blender pose and copies it on the physical model.
 
 Getting the signal from Blender to the physical hardware required its own pipeline. First an armature in blender is used to pose the finger and additionally uses Blender's built in inverse kinematics solver to solve the joint angles needed to point the finger in a certain direction. Then by deriving the transformation matrix for the finger, I was able to create an expression that represented the change in tendon length as a matrix function of the joint angles. 
 
-### Variable definitions
+## Finger Kinematics
 Let $$p_{1}$$ be the point about which the finger rotates in the sagittal plane.
 Let $$p_{2}$$ be the point about which the finger rotates in the frontal plane.
 Let $$n$$ be the offset distance between $$p_{1}$$ and $$p_{2}$$
@@ -142,7 +141,7 @@ $$
 
 
 ## Software
-The joint angles calculated in Blender are sent through a socket server to a separate Python script, which uses the above expressions and converts those angles into the tendon lengths needed, then into servo angles. These are formatted into string commands, and sent over serial to an ESP32 that interprets and executes the commands. While the system has many separate, communicating scripts, it still maintains a real-time latency and is reactive to small changes on blender.
+The joint angles calculated in Blender are sent through a socket server to a separate Python script, which uses the above expressions and converts those angles into the tendon lengths needed, then into servo angles. These are formatted into string commands, and sent over serial to an ESP32 that interprets and executes the commands. While the system has many separate, communicating processes, it still maintains a real-time responsiveness as seen in the video above.
 
 # Future plans
 Right now, I’m working through a stall torque issue with the curl servo, since it struggles when the finger is fully extended. Once that’s sorted, the plan is to build more fingers, develop a thumb from a few concepts I’ve sketched out, and eventually build toward a full hand with a wrist and forearm. Beyond the engineering challenge, there’s a bigger reason hands specifically drew me in. A well designed robotic hand has a direct path toward better prosthetics, and there are a lot of people who could benefit from better prosthetics.
