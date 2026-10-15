@@ -26,7 +26,7 @@ Permanent magnets create a magnetic field around themselves. The strength of thi
 All designs and code are available in the sensor development folder of my [RoboticHandController](https://github.com/cuttlefish27/robotic_hand_controller) repo.
 
 <img src="/assets/images/SensorDesign.JPG" style="display: block; margin: 0 auto; width: 50%:">
-
+\
 The design consists of 3 distinct layers. The top layer is a mix of silicone and iron powder, serving as the flexible material with high magnetic permeability. The idea is that the field will concentrate itself through this layer due to its high iron content. The second layer beneath the silicone is the PCB. This contains the hall sensor and other required circuitry. The final layer is the magnet that produces the magnetic field. 
 
 ### Implementation
@@ -36,17 +36,18 @@ The design consists of 3 distinct layers. The top layer is a mix of silicone and
 <img src="/assets/images/SensorSchematic.png" width="100%" height="100%">
 
 <img src="/assets/images/PCBLayout.png" width="100%" style="display: block; margin: 0 auto">
-
+\
 The circuit consists of a DRV5056A4 Analog Hall Effect Sensor, a decoupling capacitor, and a low pass RC filter. The hall effect sensor outputs continuous voltage values depending on the magnetic field it detects. Since it is an analog component, a stable input voltage is extremely important for a consistent output. The decoupling capacitor helps stabilize input voltage by acting as a bank of charge that smooths ripples in voltage. The RC filter helps block high frequency noise from the output pin of the sensor giving a more stable sensor reading. 
 
 #### Casing and Silicone Layer
 <img src="/assets/images/Casing.JPG" width="80%" style="display: block; margin: 0 auto"> 
-
+\
 The silicone layer was created by mixing iron powder into 2 part silicone and letting the mix cure. This mixture is placed with iron-heavy side directly on top of the PCB. The 3d printed casing surrounds the PCB and silicone and has a place for a small neodynium magnet in the base to serve as the magnetic field source. 
 
 ### Data Aquisition and Code structure
 <video src="/assets/videos/SensorDemo.mp4" preload="auto" controls muted width="75%" style="display: block; margin: 0 auto"></video>
-
+\
+\
 The sensor is connected to my ESP32 which sends the data through a USB to my computer. The computer has a live graph of sensor readings running using matplotlib, which lets me analyze the sensor's reaction to different stimuli. In my implementation, I have also inluded an updating readout in the terminal which tracks the sensor state, number of presses, threshold value, and current sensor value. In the above video, you can see a demonstration of the sensor's live graph and terminal readout as the sensor is pressed. 
 
 The sensor's output scales with the strength of the press and is able to detect quick taps, long presses, and a wide variety of pressures, from a finger simply resting on it to a strong squeeze. 
