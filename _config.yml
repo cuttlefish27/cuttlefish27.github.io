@@ -5,3 +5,5 @@ theme: minima
 header_pages: 
  - about.md
  - blog.md
+ - projects.md
+ 

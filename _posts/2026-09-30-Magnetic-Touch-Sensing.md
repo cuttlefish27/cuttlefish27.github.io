@@ -2,11 +2,12 @@
 layout: post
 title: Magnetic Touch Sensing
 date: 2026-10-14
+project: magnetic sensor
 ---
 
 
 
-As I've continued working on my robotic hand (keep an eye out for the next post), I've noticed a major issue with my current design: it has no way to recieve tactile feedback. But wait, lets take a step back and ask the question "Why is tactile feedback important?"
+As I've continued working on my [robotic hand]({% post_url 2026-08-01-A-Robotic-Hand-Begins-With-A-Finger %}) (keep an eye out for the next post), I've noticed a major issue with my current design: it has no way to recieve tactile feedback. But wait, lets take a step back and ask the question "Why is tactile feedback important?"
 
 # Tactile Feedback in Humans
 
@@ -48,7 +49,7 @@ The silicone layer was created by mixing iron powder into 2 part silicone and le
 <video src="/assets/videos/SensorDemo.mp4" preload="auto" controls muted width="75%" style="display: block; margin: 0 auto"></video>
 \
 \
-The sensor is connected to my ESP32 which sends the data through a USB to my computer. The computer has a live graph of sensor readings running using matplotlib, which lets me analyze the sensor's reaction to different stimuli. In my implementation, I have also inluded an updating readout in the terminal which tracks the sensor state, number of presses, threshold value, and current sensor value. In the above video, you can see a demonstration of the sensor's live graph and terminal readout as the sensor is pressed. 
+The sensor is connected to my ESP32 which sends the data through a USB to my computer. The computer has a live graph of sensor readings running using matplotlib, which lets me analyze the sensor's reaction to different stimuli. In my implementation, I have also included an updating readout in the terminal which tracks the sensor state, number of presses, threshold value, and current sensor value. In the above video, you can see a demonstration of the sensor's live graph and terminal readout as the sensor is pressed. 
 
 The sensor's output scales with the strength of the press and is able to detect quick taps, long presses, and a wide variety of pressures, from a finger simply resting on it to a strong squeeze. 
 

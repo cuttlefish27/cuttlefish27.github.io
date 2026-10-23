@@ -2,6 +2,7 @@
 layout: post
 title: A Robotic Hand Begins With a Finger
 date: 2026-08-01
+project: robotic hand
 ---
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 

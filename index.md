@@ -5,8 +5,14 @@ title: Home
 
 # Welcome
 
-This blog is a collection of my interests and projects.
+Welcome to my blog documenting my interests and projects. Check out the projects page to see a full list of projects.
+<br>
+<br>
+Below is my latest post, enjoy reading!
 
+___________________________________________________________
+
+<br>
 # Latest Post
 
 {% assign latest_post = site.posts.first %}
@@ -16,3 +22,7 @@ This blog is a collection of my interests and projects.
 </a>
 
 {{ latest_post.excerpt }}
+
+__________________________________________________________
+
+<br>
