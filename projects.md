@@ -50,10 +50,10 @@ Link to project repo:
 </ul>
 
 _____________________
-# Transformer Translation
+# Machine Translation
 Implementing and training a transformer based off of the paper "Attention is All You Need" using pytorch
 
 Link to project repo:
-<a href="https://github.com/cuttlefish27/pytorchTransformer" target="_blank">
-  Transformer Machine Translation
+<a href="https://github.com/cuttlefish27/machine_translation" target="_blank">
+  Machine Translation
 </a>
